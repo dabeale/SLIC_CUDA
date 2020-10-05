@@ -118,7 +118,7 @@ void SlicCuda::initGpuBuffers() {
 
 void SlicCuda::uploadFrame(const Mat& frameBGR) { 
 	cv::Mat frameBGRA;
-	cv::cvtColor(frameBGR, frameBGRA, CV_BGR2BGRA);
+	cv::cvtColor(frameBGR, frameBGRA, COLOR_BGR2BGRA);
 	CV_Assert(frameBGRA.type() == CV_8UC4);
 	CV_Assert(frameBGRA.isContinuous());
 	gpuErrchk(cudaMemcpyToArray(cuArrayFrameBGRA, 0, 0, (uchar*)frameBGRA.data, m_nbPx* sizeof(uchar4), cudaMemcpyHostToDevice));

@@ -21,7 +21,7 @@ francois.xavier.derue@gmail.com
 
 class SlicCuda {
 public:
-	static enum InitType{
+	enum InitType{
 		SLIC_SIZE, // initialize with a size of spx
 		SLIC_NSPX // initialize with a number of spx
 	};
